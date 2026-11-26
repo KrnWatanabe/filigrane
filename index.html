@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Filigrane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&family=Open+Sans&family=Poppins:wght@500&display=swap"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/document.css" />
+  </head>
+  <body>
+    <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></symbol><symbol id="i-fileplus" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 12v6M9 15h6"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r=".8"/><circle cx="4.5" cy="12" r=".8"/><circle cx="4.5" cy="18" r=".8"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/><path d="m9.5 14 2 2 3.5-4"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.2 18.2a6.5 6.5 0 0 1 11.6 0"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol><symbol id="i-printer" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v6H7z"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="m7.5 11 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l1-4L16.5 4.5a2 2 0 0 1 3 3L8 19z"/><path d="m14.5 6.5 3 3"/></symbol><symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol><symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v5M14 11v5"/></symbol><symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4M11 8.5v5M8.5 11h5"/></symbol><symbol id="i-logo" viewBox="6 6 52 52"><rect x="12" y="10" width="18" height="13" rx="4"/><path d="M34 10H46a6 6 0 0 1 6 6V23H34z"/><path d="M12 28H36a6 6 0 0 1 6 6V41H12z"/><path d="M12 54a8 8 0 0 1 16 0z"/></symbol></defs></svg>
+    <div class="app" data-tab="edit">
+      <header class="topbar">
+        <h1 class="sr-only">Filigrane, éditeur de devis et factures</h1>
+        <div class="brand" aria-hidden="true">
+          <svg class="brand__mark"><use href="#i-logo" /></svg>
+          <span class="brand__name">Filigrane</span>
+        </div>
+        <div class="docname">
+          <label class="docname__field">
+            <input
+              type="text"
+              id="docName"
+              maxlength="40"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Nom du document"
+              title="Nom du document, utilisé pour le fichier PDF. Lettres, chiffres et _ uniquement."
+            />
+            <span class="docname__icon" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg></span>
+          </label>
+          <div class="menu">
+            <button type="button" data-menu aria-haspopup="true" aria-expanded="false" aria-label="Changer de document"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="menu__panel menu__panel--docs" role="group" aria-label="Documents" hidden>
+              <label class="search"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="docSearch" placeholder="Rechercher un document" aria-label="Rechercher un document" /></label>
+              <div id="docsList"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu">
+          <button type="button" data-menu aria-haspopup="true" aria-expanded="false"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> Nouveau <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="menu__panel" role="menu" hidden>
+            <button type="button" class="menu__item" role="menuitem" data-action="new-quote"><svg class="ico" aria-hidden="true"><use href="#i-fileplus"/></svg>Nouveau devis</button>
+            <button type="button" class="menu__item" role="menuitem" data-action="new-invoice"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg>Nouvelle facture</button>
+            <button type="button" class="menu__item" role="menuitem" data-action="to-invoice" hidden><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg>
+              Facture depuis ce devis
+            </button>
+            <div class="menu__sep"></div>
+            <button type="button" class="menu__item" role="menuitem" data-action="duplicate"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Dupliquer ce document</button>
+            <button type="button" class="menu__item" role="menuitem" data-action="import"><svg class="ico" aria-hidden="true"><use href="#i-folder"/></svg>Ouvrir un brouillon JSON</button>
+          </div>
+        </div>
+
+        <span class="badge" id="typeBadge" title="Type du document (à changer dans la section A)"></span>
+        <span class="topbar__spacer"></span>
+
+        <button type="button" id="btnProfile"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg> Profil</button>
+        <div class="menu menu--right">
+          <button type="button" data-menu aria-haspopup="true" aria-expanded="false" aria-label="Plus d'actions"><svg class="ico" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div class="menu__panel" role="menu" hidden>
+            <button type="button" class="menu__item" role="menuitem" data-action="duplicate"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>Dupliquer</button>
+            <button type="button" class="menu__item" role="menuitem" data-action="export"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Exporter un brouillon (JSON)</button>
+            <button type="button" class="menu__item" role="menuitem" data-action="import"><svg class="ico" aria-hidden="true"><use href="#i-folder"/></svg>Ouvrir un brouillon</button>
+            <div class="menu__sep"></div>
+            <button type="button" class="menu__item menu__item--danger" role="menuitem" data-action="delete"><svg class="ico" aria-hidden="true"><use href="#i-trash"/></svg>
+              Supprimer
+            </button>
+          </div>
+        </div>
+        <input type="file" id="fileImport" accept=".json,application/json" hidden />
+        <button type="button" id="btnPrint" class="primary"><svg class="ico" aria-hidden="true"><use href="#i-printer"/></svg> Imprimer / PDF</button>
+      </header>
+
+      <main class="workspace" id="workspace">
+        <section class="editor" aria-label="Saisie">
+          <div class="editor__scroll">
+          <details class="section" open>
+            <summary><span class="tile"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg></span><span class="summary__title">A. Document</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+            <div class="body">
+              <div class="grid2">
+                <label class="field"
+                  ><span>Type</span>
+                  <select data-doc="type">
+                    <option value="devis">Devis</option>
+                    <option value="facture">Facture</option>
+                  </select></label
+                >
+                <label class="field"
+                  ><span>Numéro (saisi à la main)</span><input type="text" data-doc="number" id="fNumber"
+                /></label>
+              </div>
+              <label class="field"><span>Date d'émission</span><input type="date" data-doc="issueDate" /></label>
+              <label class="field"
+                ><span>Destinataire et coordonnées (une ligne par ligne)</span
+                ><textarea rows="4" data-doc="recipient"></textarea
+              ></label>
+              <label class="field"><span>Titre</span><input type="text" data-doc="title" /></label>
+              <label class="field"
+                ><span>Date ou période de prestation</span><input type="text" data-doc="serviceDate" />
+                <small>Texte libre, affiché sous le titre.</small></label
+              >
+              <label class="field"><span>Description</span><textarea rows="6" data-doc="description"></textarea></label>
+            </div>
+          </details>
+
+          <details class="section" open>
+            <summary><span class="tile"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg></span><span class="summary__title">B. Lignes et total</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+            <div class="body">
+              <div class="item-head"><span>Libellé</span><span>Qté</span><span>Prix unit. (€)</span><span></span></div>
+              <div id="items"></div>
+              <button type="button" id="btnAddItem"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> Ajouter une ligne</button>
+              <label class="field" style="margin-top: 10px"
+                ><span>Libellé du total</span><input type="text" data-doc="totalLabel"
+              /></label>
+              <div class="total-box"><span>Total</span><span id="totalDisplay">0,00€</span></div>
+              <label class="field field--check" style="margin-top: 10px">
+                <input type="checkbox" data-doc="showVat" />
+                <span>Afficher la mention TVA du profil</span>
+              </label>
+            </div>
+          </details>
+
+          <details class="section" data-only="devis" open>
+            <summary><span class="tile"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span><span class="summary__title">C. Conditions du devis</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+            <div class="body">
+              <label class="field"><span>Valable jusqu'au</span><input type="date" data-doc="validityDate" /></label>
+              <label class="field field--check">
+                <input type="checkbox" data-doc="acceptance" />
+                <span>Afficher le bloc d'acceptation (signature du client)</span>
+              </label>
+              <label class="field"
+                ><span>Texte d'acceptation</span><input type="text" data-doc="acceptanceText"
+              /></label>
+            </div>
+          </details>
+
+          <details class="section" data-only="facture" open>
+            <summary><span class="tile"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span><span class="summary__title">C. Conditions de la facture</span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+            <div class="body">
+              <label class="field"><span>Échéance de paiement</span><input type="date" data-doc="dueDate" /></label>
+              <label class="field"
+                ><span>Conditions de paiement</span><textarea rows="3" data-doc="paymentTerms"></textarea
+              ></label>
+              <label class="field"
+                ><span>Référence du devis</span><input type="text" data-doc="refQuote" />
+                <small>Numéro du devis, par exemple 2610.</small></label
+              >
+              <label class="field"><span>Bon de commande</span><input type="text" data-doc="refPO" /></label>
+              <label class="field"><span>Engagement</span><input type="text" data-doc="refCommitment" /></label>
+            </div>
+          </details>
+
+          <div class="notice" id="layoutWarn" hidden>
+            Un bloc de texte est plus haut qu'une page : le document déborde. Raccourcissez-le ou ajoutez des retours à
+            la ligne.
+          </div>
+          </div>
+        </section>
+
+        <div
+          class="splitter"
+          id="splitter"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Largeur de la colonne de saisie"
+          tabindex="0"
+          title="Glisser pour ajuster la largeur (double-clic : valeur par défaut)"
+        ></div>
+
+        <section class="preview-col" aria-label="Aperçu">
+          <div class="preview-bar">
+            <span class="hint">Aperçu A4</span>
+            <div class="menu menu--right only-desktop">
+              <button type="button" data-menu aria-haspopup="true" aria-expanded="false">
+                <svg class="ico" aria-hidden="true"><use href="#i-zoom"/></svg> Ajuster : <span id="zoomLabel">Largeur</span> <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+              <div class="menu__panel" role="menu" hidden>
+                <button type="button" class="menu__item" role="menuitem" data-zoom="fit">Ajuster à la largeur</button>
+                <button type="button" class="menu__item" role="menuitem" data-zoom="page">Page entière</button>
+                <button type="button" class="menu__item" role="menuitem" data-zoom="0.75">75 %</button>
+                <button type="button" class="menu__item" role="menuitem" data-zoom="1">100 %</button>
+                <button type="button" class="menu__item" role="menuitem" data-zoom="1.25">125 %</button>
+              </div>
+            </div>
+            <div class="menu menu--right only-mobile">
+              <button type="button" data-menu aria-haspopup="true" aria-expanded="false">
+                <svg class="ico" aria-hidden="true"><use href="#i-zoom"/></svg> Zoom : <span id="mzoomLabel">Largeur</span>
+                <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>
+              </button>
+              <div class="menu__panel" role="menu" hidden>
+                <button type="button" class="menu__item" role="menuitem" data-mzoom="1">Largeur de l'écran</button>
+                <button type="button" class="menu__item" role="menuitem" data-mzoom="1.5">150 %</button>
+                <button type="button" class="menu__item" role="menuitem" data-mzoom="2">200 %</button>
+                <button type="button" class="menu__item" role="menuitem" data-mzoom="3">300 %</button>
+              </div>
+            </div>
+          </div>
+          <div class="preview-pane" id="previewPane">
+            <div class="preview" id="preview"></div>
+          </div>
+        </section>
+      </main>
+
+      <div class="statusbar" id="status" role="status"></div>
+
+      <nav class="tabbar" aria-label="Affichage">
+        <button type="button" data-show="edit" aria-pressed="true"><svg class="ico" aria-hidden="true"><use href="#i-pencil"/></svg> Saisie</button>
+        <button type="button" data-show="preview" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-eye"/></svg> Aperçu</button>
+        <button type="button" id="tabPdf" class="primary"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> PDF</button>
+      </nav>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+      <div class="drawer__head">
+        <h2 id="drawerTitle"><span class="tile"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg></span>Profil de l'émetteur</h2>
+        <button type="button" id="drawerClose" class="iconbtn" aria-label="Fermer" title="Fermer"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="drawer__body">
+        <p class="hint">Saisi une fois, enregistré dans ce navigateur et repris dans tous les documents.</p>
+        <label class="field"
+          ><span>Police du document</span>
+          <select data-profile="font">
+            <option value="sans">Sans serif : Open Sans</option>
+            <option value="serif">Serif : Lora</option>
+            <option value="round">Sans serif arrondie : Montserrat</option>
+          </select>
+          <small id="fontNote"></small></label
+        >
+        <label class="field"><span>Nom légal</span><input type="text" data-profile="legalName" /></label>
+        <label class="field field--check">
+          <input type="checkbox" data-profile="isEI" />
+          <span>Entrepreneur individuel : ajouter la mention « EI » après le nom</span>
+        </label>
+        <label class="field field--check">
+          <input type="checkbox" data-profile="showIdentity" />
+          <span>Afficher nom légal et adresse dans l'en-tête du document</span>
+        </label>
+        <label class="field"><span>Adresse</span><textarea rows="2" data-profile="address"></textarea></label>
+        <label class="field"
+          ><span>Baseline sous le logo</span><input type="text" data-profile="baseline" />
+          <small>Texte en police du document, 10 pt, centré sous le logo. Ne pas la mettre aussi dans l'image de l'en-tête.</small></label
+        >
+        <label class="field"
+          ><span>SIRET (ligne affichée telle quelle)</span><input type="text" data-profile="siret"
+        /></label>
+        <label class="field"
+          ><span>Autres mentions d'identification (une par ligne)</span
+          ><textarea rows="2" data-profile="otherIds"></textarea>
+          <small>Par exemple le numéro de la Maison des Artistes.</small></label
+        >
+        <label class="field"
+          ><span>Mention TVA</span><input type="text" data-profile="vatMention" />
+          <small>Affichée sous le total. Laisser vide pour ne rien afficher.</small></label
+        >
+        <div class="field">
+          <span>En-tête : logo avec le nom de la marque</span>
+          <input type="file" id="headerFile" accept=".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg" />
+          <small id="headerState"></small>
+          <small
+            >Idéal : SVG de 190,5 unités de large (hauteur libre, environ 40), affiché à 67,3 mm de large en haut à
+            gauche, centré. Sans la baseline (elle se saisit plus haut). Texte vectorisé, fond transparent, couleur
+            #696e79. PNG ou JPEG : au moins 1 200 px de large.</small
+          >
+          <label class="field" style="margin: 8px 0"
+            ><span>Taille du logo (% de l'espace réservé)</span
+            ><input type="number" data-profile="headerScale" min="20" max="150" step="1" inputmode="numeric" />
+            <small>100 = pleine largeur (67,3 mm). Entre 20 et 150.</small></label
+          >
+          <button type="button" id="headerReset">Revenir à l'image anonyme</button>
+        </div>
+        <div class="field">
+          <span>Pied de page : petit logo</span>
+          <input type="file" id="logoFile" accept=".svg,.png,.jpg,.jpeg,image/svg+xml,image/png,image/jpeg" />
+          <small id="logoState"></small>
+          <small
+            >Idéal : SVG de 29,9 × 18,8 unités (rapport 1,6 : 1), affiché à 10,5 × 6,6 mm, centré. PNG ou JPEG : au
+            moins 300 × 188 px.</small
+          >
+          <button type="button" id="logoReset">Revenir à l'image anonyme</button>
+        </div>
+        <label class="field"
+          ><span>Pied de page : coordonnées (une ligne par ligne, centré, 10 pt)</span
+          ><textarea rows="3" data-profile="footer"></textarea
+        ></label>
+        <label class="field"
+          ><span>Conditions de paiement par défaut des factures</span
+          ><textarea rows="2" data-profile="defaultPaymentTerms"></textarea
+        ></label>
+      </div>
+    </aside>
+
+    <dialog class="dialog" id="confirmDialog" aria-labelledby="confirmTitle">
+      <form method="dialog">
+        <h2 id="confirmTitle"></h2>
+        <p id="confirmText"></p>
+        <div class="dialog__actions">
+          <button type="submit" value="cancel">Annuler</button>
+          <button type="submit" value="ok" class="primary" id="confirmOk"></button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="measure doc" id="measure" aria-hidden="true"></div>
+
+    <script src="js/money.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

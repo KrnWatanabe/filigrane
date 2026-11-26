@@ -1,0 +1,46 @@
+{
+  "format": "edf-draft",
+  "version": 1,
+  "profile": {
+    "legalName": "Camille Exemple",
+    "isEI": true,
+    "showIdentity": true,
+    "address": "1 rue de l'Exemple\n00000 Ville-Exemple",
+    "siret": "SIRET : 000 000 000 00000",
+    "otherIds": "N° MDA : X000000",
+    "vatMention": "TVA non applicable, art. 293 B du CGI",
+    "footer": "E / contact@exemple.invalid // T : +33 0 00 00 00 00\nPortfolio : www.exemple.invalid",
+    "defaultPaymentTerms": "Règlement par virement bancaire à réception de la facture."
+  },
+  "document": {
+    "type": "devis",
+    "number": "0001",
+    "issueDate": "2026-01-15",
+    "recipient": "Association Exemple\n12 rue des Lilas\n00000 Ville-Exemple",
+    "title": "Devis pour un atelier d'initiation de deux heures",
+    "serviceDate": "20 février 2026",
+    "description": "Pour un atelier de 10 participants.\nSoit 1 kit par personne, comprenant le matériel de base.",
+    "items": [
+      {
+        "label": "Animation de l’atelier (2 heures)",
+        "qty": "1",
+        "price": "300,00"
+      },
+      {
+        "label": "Kit de matériel par participant",
+        "qty": "10",
+        "price": "4,50"
+      }
+    ],
+    "totalLabel": "TOTAL (10 personnes) :",
+    "showVat": true,
+    "validityDate": "2026-02-15",
+    "acceptance": true,
+    "acceptanceText": "Bon pour accord, date et signature du client :",
+    "dueDate": "",
+    "paymentTerms": "",
+    "refQuote": "",
+    "refPO": "",
+    "refCommitment": ""
+  }
+}

@@ -1,0 +1,255 @@
+/*
+ * The printed document. Dimensions (mm) were measured on the reference PDFs
+ * rendered at 200 dpi: margins, line pitch, rule position, footer position.
+ *
+ * Fonts: Google Fonts (Open Sans, Lora, Montserrat, linked in index.html), then local
+ * fallbacks. No font file ships with this project.
+ */
+:root {
+  --doc-sans: 'Open Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --doc-serif: Lora, Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', 'Liberation Serif', serif;
+  --doc-round: Montserrat, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --doc-ink: #696e79; /* tint of the brand SVGs (the reference PDFs render it slightly darker, #5b6370) */
+  --doc-font: var(--doc-sans);
+}
+
+/* font chosen in the profile (set on <html> by app.js) */
+:root[data-doc-font='serif'] {
+  --doc-font: var(--doc-serif);
+}
+
+:root[data-doc-font='round'] {
+  --doc-font: var(--doc-round);
+}
+
+.doc {
+  color: var(--doc-ink);
+  font-family: var(--doc-font);
+  font-size: 12pt;
+  font-weight: 400;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.doc *,
+.doc *::before,
+.doc *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 296.6mm;
+  overflow: hidden;
+  background: #fff;
+}
+
+.flow {
+  position: absolute;
+  left: 0;
+  width: 210mm;
+}
+
+.blk {
+  display: flow-root;
+  width: 210mm;
+}
+
+/* ---- header ---- */
+.head {
+  position: relative;
+  width: 210mm;
+  height: 57.9mm;
+}
+
+.head__brand {
+  position: absolute;
+  left: 10.77mm;
+  top: 10.05mm;
+  width: 67.3mm; /* reserved space: the logo is centred in it, baseline centred under the logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head__logo {
+  display: block;
+  width: calc(67.3mm * var(--brand-scale, 1));
+  height: auto;
+}
+
+.head__baseline {
+  margin-top: 1.5mm;
+  width: max-content; /* not limited to the logo width: one line whenever it fits */
+  max-width: 90mm;
+  text-align: center;
+  font-size: 10pt;
+  line-height: 4.59mm;
+  overflow-wrap: anywhere;
+}
+
+.head__meta {
+  position: absolute;
+  right: 10.5mm;
+  top: 10.6mm;
+  max-width: 95mm;
+  text-align: right;
+  font-size: 11pt;
+  line-height: 4.66mm;
+}
+
+.head__line {
+  overflow-wrap: anywhere;
+}
+
+.head__blank {
+  height: 4.66mm;
+}
+
+/* ---- title ---- */
+.title {
+  padding: 0 28.4mm;
+  text-align: center;
+  font-size: 14pt;
+  line-height: 8.1mm;
+}
+
+/* ---- description / rows ---- */
+.desc {
+  margin-left: 28.4mm;
+  width: 153.7mm;
+  font-size: 12pt;
+  line-height: 8.467mm;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.row,
+.total {
+  margin-left: 28.4mm;
+  width: 153.7mm;
+  padding: 0 3.9mm 0 3.6mm;
+  font-size: 12pt;
+  line-height: 8.467mm;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.row__label {
+  overflow-wrap: anywhere;
+}
+
+.row__amount,
+.total__amount {
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 5mm;
+}
+
+.tail {
+  display: flow-root;
+}
+
+.rule {
+  margin: 9.3mm 0 0 28.4mm;
+  width: 153.7mm;
+  height: 0.38mm;
+  background: var(--doc-ink);
+}
+
+.total {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding-top: 7.3mm;
+}
+
+/* ---- notes ---- */
+.note {
+  margin-left: 28.4mm;
+  width: 153.7mm;
+  padding: 0 3.6mm;
+  font-size: 11pt;
+  line-height: 5.8mm;
+}
+
+.note__text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.note__sign {
+  margin-top: 3mm;
+  height: 24mm;
+  border: 0.25mm solid var(--doc-ink);
+}
+
+/* ---- continuation header, footer ---- */
+.cont {
+  position: absolute;
+  right: 10.5mm;
+  top: 10.6mm;
+  font-size: 11pt;
+  line-height: 4.66mm;
+}
+
+.foot {
+  position: absolute;
+  left: -0.9mm; /* the reference footer is centred on 104.1 mm, not 105 */
+  width: 210mm;
+  text-align: center;
+}
+
+.foot__logo {
+  display: block;
+  margin: 0 auto;
+  width: 10.54mm;
+  height: 6.63mm; /* ideal box: 29.9 x 18.8 units */
+  object-fit: contain;
+}
+
+.foot__text {
+  margin-top: 1.51mm;
+  padding: 0 14mm;
+  font-size: 10pt;
+  line-height: 4.59mm;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ---- hidden measuring area ---- */
+.measure {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 210mm;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  .page {
+    zoom: 1 !important;
+    break-after: page;
+    page-break-after: always;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+
+  .page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 190.5 40">
+  <g fill="#696e79" font-family="Georgia, 'Times New Roman', serif">
+    <text x="95" y="22" font-size="19" font-style="italic" text-anchor="middle">Prénom Nom</text>
+    <rect x="36" y="31.6" width="21" height=".5"/>
+    <rect x="134" y="31.6" width="21" height=".5"/>
+    <text x="95" y="35.5" font-size="9" font-style="italic" text-anchor="middle">votre activité</text>
+  </g>
+</svg>
